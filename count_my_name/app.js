@@ -1,30 +1,15 @@
 
 const myName = 'Ярослав' // Задаем мое имя
-let number = prompt('Сколько Ярославов вам нужно для работы? Введите число'), // Задаем промпт 
-last = number.slice(-2) // отслаиваем 2 последних числа
+const number = +prompt('Введите необходимое кол-во Ярославов для работы') // Задаем промпт 
  
-if (last >= '11' && last <= '20') { // Есть проблемы с 11 до 20
-    last = last.slice(-2)  // отсекаем если правда 2 циферки
-    returnNumber = Number(last) // Преобразовываем в число
+const numberSlicedOnce = number % 10
+const numberSlicedTwice = number % 100
+ 
+if (numberSlicedTwice > 9 && numberSlicedTwice < 21 || numberSlicedTwice === 0 || numberSlicedOnce > 4) {
+   alert('К вашим услугам ' + number + ' ' + myName + 'ов')
+} else if(numberSlicedOnce > 1 && numberSlicedOnce < 5) {
+  alert('К вашим услугам ' + number + ' ' + myName + 'а')
 } else {
-    last = last.slice(-1) // Если нет проблем то 1 
-    returnNumber = Number(last)
+  alert('К вашим услугам ' + number + ' ' + myName)
 }
- 
-
-if ( last > 10 && last < 20) {
-    alert('К вашим услугам ' + number + ' ' + myName + 'ов')
-}
-else if (last >1 && last < 5) {
-    alert('К вашим услугам ' + number + ' ' + myName + 'а')
-} 
-else if(last == 0) { // ПОЧЕМУ 0 ЭТО СТРОКА?!
-    alert('К вашим услугам ' + number + ' ' + myName + 'ов')
-} else if (last == 1) { // ПОЧЕМУ 1 ЭТО СТРОКА?!!
-    alert('К вашим услугам ' + number + ' ' + myName)
-} 
-else if (last > 4) {
-    alert('К вашим услугам ' + number + ' ' + myName + 'ов')
-} 
-
 

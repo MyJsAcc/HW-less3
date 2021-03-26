@@ -1,9 +1,9 @@
 // Задам переменны для моих ячеек под результаты
 
-let writeSalary, // Промпт
+let salaryInput, // Промпт
     countSalary = 0, // Сумма зарплат
     averageSalary, // Средняя зарплата
-    countI = 0, // Подсчет итераций
+    i = 0, // Подсчет итераций
     historySalary = []; // Массив для записи истории ввода
 
 // Теперь цикл
@@ -12,14 +12,14 @@ let writeSalary, // Промпт
 
 while(true) {
     
-    writeSalary = +prompt('Введите сумму') // Вызываем наш промпт
+    salaryInput = +prompt('Введите сумму') // Вызываем наш промпт
  
-    if(writeSalary !== NaN && writeSalary) { // Если Промпт не число и не пустой
+    if(salaryInput !== NaN && salaryInput) { // Если Промпт не число и не пустой
             
-        countSalary += writeSalary // Запишем сумму всех Зарплат
-        countI++; // Индекс для подсчета кол-ва итераций
+        countSalary += salaryInput // Запишем сумму всех Зарплат
+        i++; // Индекс для подсчета кол-ва итераций
    
-        historySalary.unshift(writeSalary++) // Добавляем в начало массива каждое введенное значение
+        historySalary.unshift(salaryInput++) // Добавляем в начало массива каждое введенное значение
         continue // Продолжим господа
     }
     else { // Если промпт пустой или не число 
@@ -30,7 +30,7 @@ while(true) {
        }
        else { // Иначе выводим результаты
    
-        alert(`Сумма всех зарплаток: ${countSalary} \n Средняя зарплата по больнице: ${countSalary/countI} \n История ввода ${historySalary}`)
+        alert(`Сумма всех зарплаток: ${countSalary} \n Средняя зарплата по больнице: ${countSalary/i} \n История ввода ${historySalary}`)
  
         break // Останавливаем цикл
        }
