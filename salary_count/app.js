@@ -1,42 +1,28 @@
 // Задам переменны для моих ячеек под результаты
 
-let salaryInput, // Промпт
-    countSalary = 0, // Сумма зарплат
-    averageSalary, // Средняя зарплата
-    i = 0, // Подсчет итераций
-    historySalary = []; // Массив для записи истории ввода
+const countSalaries = () => {
 
-// Теперь цикл
- 
-
+let countSalary = 0, i = 0, historySalary = '' 
 
 while(true) {
-    
-    salaryInput = +prompt('Введите сумму') // Вызываем наш промпт
+   
+    const salaryInput = +prompt('Введите сумму') // Вызываем наш промпт
  
-    if(salaryInput !== NaN && salaryInput) { // Если Промпт не число и не пустой
-            
+    if(!isNaN(salaryInput) && salaryInput) { // Если Промпт не число и не пусто   
         countSalary += salaryInput // Запишем сумму всех Зарплат
         i++; // Индекс для подсчета кол-ва итераций
-   
-        historySalary.unshift(salaryInput++) // Добавляем в начало массива каждое введенное значение
-        continue // Продолжим господа
-    }
-    else { // Если промпт пустой или не число 
+        historySalary +=  salaryInput + ' ' // Добавляем в начало массива каждое введенное значение
+        
+    } else { 
        let isSomethingWrong = confirm('Хотите продолжить вычисление или получить результаты?') // Предлагаем остановиться или продолжить оперейшн
 
-       if(isSomethingWrong) { // Если пользователь соглашается продолжить -> впирёд, продолжаем
-        continue
-       }
-       else { // Иначе выводим результаты
-   
+       if(isSomethingWrong) {        
+       } else { // Иначе выводим результаты 
         alert(`Сумма всех зарплаток: ${countSalary} \n Средняя зарплата по больнице: ${countSalary/i} \n История ввода ${historySalary}`)
- 
-        break // Останавливаем цикл
+        break
        }
     }
 }
 
-
-
- 
+}
+countSalaries()
